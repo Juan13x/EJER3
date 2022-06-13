@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/currencyInfo1_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/main_currency_info"
+        android:gravity="center"
+        android:text="@string/main_currency_info1"
+        android:textColor="@color/main_currency_info"
+        android:textSize="@dimen/main_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/currency1_editText"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/main_currency_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/main_currency"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/main_currency1_hint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="@color/main_currency"
+        android:textColorHint="@color/main_currency_hint"
+        android:textSize="@dimen/main_currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyInfo1_textView"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/resultInfo_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/main_result_info"
+        android:gravity="center"
+        android:text="@string/main_result_info"
+        android:textColor="@color/main_result_info"
+        android:textSize="@dimen/main_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/solve_button" />
+
+    <TextView
+        android:id="@+id/result_textView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/main_result_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/main_result"
+        android:gravity="center"
+        android:textColor="@color/main_result"
+        android:textSize="@dimen/main_result"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultInfo_textView" />
+
+    <LinearLayout
+        android:id="@+id/choice_linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currency1_editText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/choice1_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/main_choice_info"
+                android:gravity="center"
+                android:text="@string/main_choice_info1"
+                android:textColor="@color/main_choice_info"
+                android:textSize="@dimen/main_info" />
+
+            <TextView
+                android:id="@+id/choice2_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/main_choice_info"
+                android:gravity="center"
+                android:text="@string/main_choice_info2"
+                android:textColor="@color/main_choice_info"
+                android:textSize="@dimen/main_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_choice_height"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/choice1_spinner"
+                style="@android:style/Widget.Spinner.DropDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:entries="@array/main_entries"
+                tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+            <Spinner
+                android:id="@+id/choice2_spinner"
+                style="@android:style/Widget.Spinner.DropDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:entries="@array/main_entries" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/solve_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/main_solve_bground"
+        android:text="@string/main_solve"
+        android:textAllCaps="false"
+        android:textColor="@color/main_solve"
+        android:textSize="@dimen/main_solve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choice_linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

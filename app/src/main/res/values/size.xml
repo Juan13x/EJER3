@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--text-->
+    <dimen name="main_info">14sp</dimen>
+    <dimen name="main_currency">18sp</dimen>
+    <dimen name="main_result">18sp</dimen>
+    <dimen name="main_solve">18sp</dimen>
+    <!--HEIGHT-->
+    <dimen name="main_currency_height">48dp</dimen>
+    <dimen name="main_choice_height">48dp</dimen>
+    <dimen name="main_result_height">32dp</dimen>
+    <dimen name="main_solve_height">48dp</dimen>
+</resources>

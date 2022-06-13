@@ -1,0 +1,18 @@
+<resources>
+    <!--TEXT-->
+    <string name="app_name">Conversor</string>
+    <string name="main_currency_info1">Valor Moneda 1</string>
+    <string name="main_choice_info1">Moneda 1</string>
+    <string name="main_choice_info2">Moneda 2</string>
+    <string name="main_result_info">Resultado</string>
+    <string name="main_solve">Convertir</string>
+    <string name="main_solve_currency_empty">Ingrese valor!!</string>
+    <!--HINT-->
+    <string name="main_currency1_hint">Ingrese Valor</string>
+    <!--ARRAYS-->
+    <string-array name="main_entries">
+        <item>COP</item>
+        <item>USD</item>
+        <item>EUR</item>
+    </string-array>
+</resources>

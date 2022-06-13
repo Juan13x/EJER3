@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TEXT-->
+    <color name="main_result_info">@color/Red</color>
+    <color name="main_currency_info">@color/SlateGray</color>
+    <color name="main_choice_info">@color/DarkGreen</color>
+    <color name="main_currency">@color/black</color>
+    <color name="main_currency_empty">@color/Red</color>
+    <color name="main_result">@color/White</color>
+    <color name="main_solve">#FF00FFFF</color>
+    <!--STROKE-->
+    <color name="main_result_stroke">@color/black</color>
+    <color name="main_choice_info_stroke">@color/black</color>
+    <color name="main_currency_stroke">@color/black</color>
+    <color name="main_currency_info_stroke">@color/black</color>
+    <color name="main_result_info_stroke">@color/black</color>
+    <!--BACKGROUND-->
+    <color name="main_result_bground">@color/black</color>
+    <color name="main_choice_info_bground">@color/LemonChiffon</color>
+    <color name="main_currency_bground">#FFFF77</color>
+    <color name="main_currency_info_bground">@color/PapayaWhip</color>
+    <color name="main_result_info_bground">@color/Gainsboro</color>
+    <color name="main_solve_bground">@color/DarkMagenta</color>
+    <!--HINT-->
+    <color name="main_currency_hint">@color/Gray</color>
+</resources>
