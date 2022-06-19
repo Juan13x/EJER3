@@ -9,6 +9,7 @@
     <string name="main_solve_currency_empty">Ingrese valor!!</string>
     <!--HINT-->
     <string name="main_currency1_hint">Ingrese Valor</string>
+    <string name="splash_image_Description">Converter_Image</string>
     <!--ARRAYS-->
     <string-array name="main_entries">
         <item>COP</item>

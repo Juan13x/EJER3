@@ -23,4 +23,7 @@
     <color name="main_solve_bground">@color/DarkMagenta</color>
     <!--HINT-->
     <color name="main_currency_hint">@color/Gray</color>
+
+    <color name="splash_image_bground">@color/Red</color>
+    <color name="splash_bground">@color/Crimson</color>
 </resources>

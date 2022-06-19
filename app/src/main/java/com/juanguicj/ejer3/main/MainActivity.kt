@@ -1,17 +1,18 @@
-package com.juanguicj.ejer3
+package com.juanguicj.ejer3.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
+import com.juanguicj.ejer3.R
 import com.juanguicj.ejer3.databinding.ActivityMainBinding
 import java.util.*
 import kotlin.concurrent.timerTask
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding
+    private lateinit var mainModelView: MainModelView
     private val timer = Timer()
-    private val usd = 3944.4f
-    private val eur = 4133.47f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +20,11 @@ class MainActivity : AppCompatActivity() {
         val view = mainBinding.root
         setContentView(view)
 
-        with(mainBinding) {
-            solveButton.setOnClickListener {
-                val currency1 = currency1EditText.text.toString()
+        mainModelView = ViewModelProvider(this)[mainModelView::class.java]
 
-                if (currency1.isEmpty()) {
+        with(mainBinding) {
+            mainModelView.currencyEmptyLiveData.observe(this@MainActivity) { currencyEmpty ->
+                if (currencyEmpty) {
                     currency1EditText.setHintTextColor(
                         ContextCompat.getColor
                             (applicationContext, R.color.main_currency_empty)
@@ -39,23 +40,26 @@ class MainActivity : AppCompatActivity() {
                         },
                         1000
                     )
+                }
+            }
 
-                } else {
+            mainModelView.proceedLiveData.observe(this@MainActivity) {
+                    proceed ->
+                if(proceed){
                     val choiceCurrency1 = choice1Spinner.selectedItem.toString()
                     val choiceCurrency2 = choice2Spinner.selectedItem.toString()
-
-                    var valueCurrency1 = currency1.toFloat()
-                    when (choiceCurrency1) {
-                        "USD" -> valueCurrency1 *= usd
-                        "EUR" -> valueCurrency1 *= eur
-                    }
-
-                    when (choiceCurrency2) {
-                        "USD" -> valueCurrency1 /= usd
-                        "EUR" -> valueCurrency1 /= eur
-                    }
-                    resultTextView.text = valueCurrency1.toString()
+                    mainModelView.process(choiceCurrency1, choiceCurrency2)
                 }
+            }
+
+            mainModelView.resultLiveData.observe(this@MainActivity) {
+                    result->
+                resultTextView.text = result
+            }
+
+            solveButton.setOnClickListener {
+                val currency1 = currency1EditText.text.toString()
+                mainModelView.validate(currency1)
             }
         }
     }
