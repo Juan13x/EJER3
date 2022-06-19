@@ -21,8 +21,8 @@ class MainModelView:ViewModel() {
             currency1.isEmpty() ->
                 currencyEmptyMutableLiveData.value = true
             else -> {
+                currency1Float = currency1.toFloat()
                 proceedMutableLiveData.value = true
-                currency1Float = currency1.toFloat() 
             }
         }
     }

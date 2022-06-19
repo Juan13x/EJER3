@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val view = mainBinding.root
         setContentView(view)
 
-        mainModelView = ViewModelProvider(this)[mainModelView::class.java]
+        mainModelView = ViewModelProvider(this)[MainModelView::class.java]
 
         with(mainBinding) {
             mainModelView.currencyEmptyLiveData.observe(this@MainActivity) { currencyEmpty ->
